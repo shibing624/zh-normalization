@@ -15,5 +15,26 @@ Chinese sentence NSW(Non-Standard-Word) Normalization
 |percentage|明天有62％的概率降雨|明天有百分之六十二的概率降雨|
 |money|随便来几个价格12块5，34.5元，20.1万|随便来几个价格十二块五，三十四点五元，二十点一万|
 |telephone|这是固话0421-33441122<br>这是手机+86 18544139121|这是固话零四二一三三四四一一二二<br>这是手机八六一八五四四一三九一二一|
+
+## Usage
+```shell
+pip install zh-normalization
+```
+
+Run the following code to normalize the Chinese sentence:
+```python
+from zh_normalization import TextNormalizer
+
+m = TextNormalizer()
+text = "电影中梁朝伟扮演的陈永仁的编号27149!"
+sents = m.normalize(text)
+new_text = ''.join(sents)
+print(new_text)
+```
+
+Output:
+```shell
+电影中梁朝伟扮演的陈永仁的编号二七幺四九!
+```
 ## References
 [Pull requests #658 of DeepSpeech](https://github.com/PaddlePaddle/DeepSpeech/pull/658/files)
