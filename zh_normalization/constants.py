@@ -14,7 +14,10 @@
 import re
 import string
 
-from pypinyin.constants import SUPPORT_UCS4
+try:
+    from pypinyin.constants import SUPPORT_UCS4
+except:
+    SUPPORT_UCS4 = False
 
 # 全角半角转换
 # 英文字符全角 -> 半角映射表 (num: 52)
