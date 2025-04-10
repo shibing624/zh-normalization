@@ -52,7 +52,9 @@ def replace_frac(match) -> str:
 
 
 # 百分数表达式
-RE_PERCENTAGE = re.compile(r'(-?)(\d+(\.\d+)?)%')
+RE_PERCENTAGE = re.compile(r'(-?)(\d+(\.\d+)?)[%'
+                           r'\uff05' # 全角百分号
+                           r']')
 
 
 def replace_percentage(match) -> str:
